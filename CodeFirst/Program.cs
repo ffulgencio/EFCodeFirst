@@ -12,10 +12,21 @@ namespace CodeFirst
         {
             using (ContextDBEntity db = new ContextDBEntity())
             {
-                // Carrera c = new Carrera();
-                var ca = db.Carreras.FirstOrDefault(x => x.Id == 2);// "Ing. En Sistemas";
-                db.Carreras.Remove(ca);
+                // AGREGAR
+                Carrera c = new Carrera();
+                c.Nombre = "Telematica";
+                db.Carreras.Add(c);
                 db.SaveChanges();
+
+                ////ELIMINAR
+                //var ca = db.Carreras.FirstOrDefault(x => x.Id == 2);// "Ing. En Sistemas";
+                //db.Carreras.Remove(ca);
+                //db.SaveChanges();
+
+                //MODIFICAR
+                //var ca = db.Carreras.FirstOrDefault(x => x.Id == 2);// "Ing. En Sistemas";
+                //ca.Nombre = "Ing. En Sistemas";
+                //db.SaveChanges();
             }
         }
     }
